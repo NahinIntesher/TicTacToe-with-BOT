@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       currentPlayer = currentPlayer === "O" ? "X" : "O";
       totalMoves--;
+      
     }
   
     function playAgainstAI(box) {
