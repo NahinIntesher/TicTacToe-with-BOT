@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Quicksand", "Cascadia Code", sans-serif;
 }
 
 body {
@@ -13,6 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   text-align: center;
+  padding: 20px;
 }
 
 .mode-selection {
@@ -21,7 +22,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
   color: #ffffff;
 }
@@ -35,6 +36,7 @@ h1 {
 .mode-buttons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -77,6 +79,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .game {
@@ -84,19 +87,20 @@ h1 {
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  width: 300px;
+  width: 90%;
+  max-width: 320px;
 }
 
 .box {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background-color: #cfe1b9;
   border: 2px solid #88976c;
   color: #37415c;
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .box:hover {
@@ -112,7 +116,8 @@ h1 {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 #reset-button,
@@ -120,7 +125,7 @@ h1 {
   background-color: #4d1c22;
   color: #e7f5dc;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -142,18 +147,20 @@ h1 {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
 }
 
 .msg-content {
   background-color: #e7f5dc;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   text-align: center;
   border: 3px solid #54162b;
+  max-width: 90%;
 }
 
 #msg {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   color: #54162b;
 }
@@ -161,7 +168,8 @@ h1 {
 .msg-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 #new-button,
@@ -169,7 +177,7 @@ h1 {
   background-color: #728156;
   color: #e7f5dc;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -178,4 +186,54 @@ h1 {
 #new-button:hover,
 #home-msg-button:hover {
   background-color: #54162b;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .game {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 280px;
+  }
+
+  .box {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .mode-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .game {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    max-width: 240px;
+  }
+
+  .box {
+    width: 70px;
+    height: 70px;
+    font-size: 1.2rem;
+  }
 }

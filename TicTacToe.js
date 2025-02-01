@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         checkWinner("X");
         totalMoves--;
-      }, 500);
+      }, 100);
       
       totalMoves--;
     }
